@@ -19,6 +19,9 @@ int main() {
     double n = 0.1, m = 0.002;
     srand(time(NULL));
     cout << A.fill(n, m) << endl;
+    cout << "esc  - exit"<<endl;
+    cout << "reds - sells wich are just spawning and splitting"<<endl;
+    cout << "greens - sells wich hunts reds and splitiing"<<endl;
     while (event_window.isOpen()) {
         sf::Event event;
         while (event_window.pollEvent(event)) {
@@ -32,7 +35,7 @@ int main() {
         Draw_Life(event_window, &A, 0, A.H * A.W);
         A.update(0, A.H*A.W);
         event_window.display();
-        std::cout << "era time = "<< float( clock () - begin_time ) /  CLOCKS_PER_SEC<< std::endl;
+        //std::cout << "era time = "<< float( clock () - begin_time ) /  CLOCKS_PER_SEC<< std::endl;
     }
     return 0;
 }
