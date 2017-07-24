@@ -407,6 +407,7 @@ Life_broken: /usr/local/lib/libsfml-window.dylib
 Life_broken: /usr/local/lib/libsfml-graphics.dylib
 Life_broken: /usr/local/lib/libsfml-network.dylib
 Life_broken: /usr/local/lib/libsfml-audio.dylib
+Life_broken: Neural_net_attempt_two/libNeural_net_attempt_two_.a
 Life_broken: CMakeFiles/Life_broken.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable Life_broken"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Life_broken.dir/link.txt --verbose=$(VERBOSE)

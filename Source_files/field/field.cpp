@@ -90,11 +90,11 @@ void field::marking(int start, int finnish) {
 
 void field::update(int start, int finnish) {
     spawning(start, finnish);
-    //thinking(start, finnish);
+    thinking(start, finnish);
 
-    //moving(start, finnish);
-    //spliting(start, finnish);
-    //marking(start, finnish);
+    moving(start, finnish);
+    spliting(start, finnish);
+    marking(start, finnish);
     time++;
 }
 

@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug
 # Target rules for target CMakeFiles/Life_broken.dir
 
 # All Build rule for target.
-CMakeFiles/Life_broken.dir/all:
+CMakeFiles/Life_broken.dir/all: Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/all
 	$(MAKE) -f CMakeFiles/Life_broken.dir/build.make CMakeFiles/Life_broken.dir/depend
 	$(MAKE) -f CMakeFiles/Life_broken.dir/build.make CMakeFiles/Life_broken.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target Life_broken"
@@ -76,7 +76,7 @@ all: CMakeFiles/Life_broken.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Life_broken.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles 21
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Life_broken.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Life_broken.dir/rule
@@ -93,6 +93,61 @@ CMakeFiles/Life_broken.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/Life_broken.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory Neural_net_attempt_two
+
+# Convenience name for "all" pass in the directory.
+Neural_net_attempt_two/all: Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/all
+
+.PHONY : Neural_net_attempt_two/all
+
+# Convenience name for "clean" pass in the directory.
+Neural_net_attempt_two/clean: Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/clean
+
+.PHONY : Neural_net_attempt_two/clean
+
+# Convenience name for "preinstall" pass in the directory.
+Neural_net_attempt_two/preinstall:
+
+.PHONY : Neural_net_attempt_two/preinstall
+
+#=============================================================================
+# Target rules for target Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir
+
+# All Build rule for target.
+Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/all:
+	$(MAKE) -f Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/build.make Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/depend
+	$(MAKE) -f Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/build.make Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Built target Neural_net_attempt_two_"
+.PHONY : Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/all
+
+# Include target in all.
+all: Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles 0
+.PHONY : Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/rule
+
+# Convenience name for target.
+Neural_net_attempt_two_: Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/rule
+
+.PHONY : Neural_net_attempt_two_
+
+# clean rule for target.
+Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/clean:
+	$(MAKE) -f Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/build.make Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/clean
+.PHONY : Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/clean
+
+# clean rule for target.
+clean: Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/clean
 
 .PHONY : clean
 

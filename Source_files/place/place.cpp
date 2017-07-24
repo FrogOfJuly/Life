@@ -9,6 +9,7 @@
 #include "../sell/sell_brain.h"
 #include "../predator/pred.h"
 #include "../body_parts/body_parts.h"
+#include "../../Neural_net_attempt_two/Brain/Brain.h"
 #include <iostream>
 
 using namespace std;
@@ -68,6 +69,12 @@ void place::spawn_pred() {
     if (guest != nullptr)
         return;
     guest = new pred(this);
+}
+
+void place::clone_pred(Brain::Brain brain) {
+    if (guest != nullptr)
+        return;
+    guest = new pred(this, brain);
 }
 
 void place::kill_unit() {

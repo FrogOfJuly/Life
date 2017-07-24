@@ -32,6 +32,9 @@ set(SOURCE_FILES
 
 add_executable(Life_broken ${SOURCE_FILES})
 
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
+
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake_modules")
 find_package(SFML REQUIRED system window graphics network audio)
 
@@ -39,5 +42,9 @@ if (SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
     target_link_libraries(Life_broken ${SFML_LIBRARIES})
 endif()
+
+add_subdirectory(Neural_net_attempt_two)
+target_link_libraries(Life_broken Neural_net_attempt_two_ GSL)
+
 
 

@@ -10,6 +10,7 @@
 #include "../brain/brain.h"
 #include "../predator/pred_params.h"
 #include "../predator/pred.h"
+#include "../predator/pred_brain.h"
 
 int sign(int x);
 
@@ -72,7 +73,7 @@ bool body_parts::split() {
         delete[] split_options;
         return false;
     }
-    data->myplace->around[split_options[i]]->spawn_pred();
+    data->myplace->around[split_options[i]]->clone_pred(dynamic_cast<pred_brain*>(this->data->myplace->guest->core)->mind);
     delete[] split_options;
     dynamic_cast<pred_params *>(data)->fat += -dynamic_cast<pred_params *>(data)->bearth_cost;
 }

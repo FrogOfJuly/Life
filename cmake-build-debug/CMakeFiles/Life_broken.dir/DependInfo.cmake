@@ -22,11 +22,13 @@ set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/include/eigen3"
   "/usr/local/include"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
+  "/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

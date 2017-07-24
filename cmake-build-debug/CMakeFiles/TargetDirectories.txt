@@ -1,3 +1,6 @@
 /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/CMakeFiles/Life_broken.dir
+/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/CMakeFiles/edit_cache.dir
+/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/CMakeFiles/rebuild_cache.dir
+/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir

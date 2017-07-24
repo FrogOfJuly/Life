@@ -11,10 +11,10 @@ typedef place *(*look)(place *, int);
 
 class pred_params : public unit_params {
 public:
-    int fat;
-    int hunger_limit = 0;
-    int bearth_limit = 10;
-    int bearth_cost = 5;
+    double fat;
+    double hunger_limit = 0;
+    double bearth_limit = 10;
+    double bearth_cost = 5;
 
     pred_params();
 

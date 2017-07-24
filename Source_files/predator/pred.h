@@ -7,6 +7,7 @@
 
 
 #include "../unit/unit.h"
+#include "../../Neural_net_attempt_two/Brain/Brain.h"
 
 class place;
 
@@ -15,6 +16,8 @@ public:
     pred();
 
     pred(place *home);
+
+    pred(place *home, Brain::Brain brain);
 
     ~pred();
 

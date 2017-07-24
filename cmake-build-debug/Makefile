@@ -123,6 +123,19 @@ Life_broken/fast:
 	$(MAKE) -f CMakeFiles/Life_broken.dir/build.make CMakeFiles/Life_broken.dir/build
 .PHONY : Life_broken/fast
 
+#=============================================================================
+# Target rules for targets named Neural_net_attempt_two_
+
+# Build rule for target.
+Neural_net_attempt_two_: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Neural_net_attempt_two_
+.PHONY : Neural_net_attempt_two_
+
+# fast build rule for target.
+Neural_net_attempt_two_/fast:
+	$(MAKE) -f Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/build.make Neural_net_attempt_two/CMakeFiles/Neural_net_attempt_two_.dir/build
+.PHONY : Neural_net_attempt_two_/fast
+
 Source_files/Life.o: Source_files/Life.cpp.o
 
 .PHONY : Source_files/Life.o
@@ -483,6 +496,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Life_broken"
+	@echo "... Neural_net_attempt_two_"
 	@echo "... Source_files/Life.o"
 	@echo "... Source_files/Life.i"
 	@echo "... Source_files/Life.s"

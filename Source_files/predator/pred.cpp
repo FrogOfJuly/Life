@@ -10,18 +10,18 @@
 
 
 pred::pred() {
-    unit::core = new pred_brain;
     unit::params = new pred_params;
     unit::body_part = new body_parts;
     unit::body_part->data = params;
+    unit::core = new pred_brain;
     unit::core->data = params;
 }
 
 pred::pred(place *home) {
-    unit::core = new pred_brain;
     unit::params = new pred_params;
     unit::body_part = new body_parts;
     unit::body_part->data = params;
+    unit::core = new pred_brain;
     unit::core->data = params;
     unit::params->myplace = home;
 }
@@ -34,11 +34,22 @@ pred::~pred() {
 
 void pred::status_update() {
     params->age++;
-    if (params->age % 3 == 0)
+    if (params->age % 10 == 0)
         dynamic_cast<pred_params *>(params)->fat--;
 
     if (dynamic_cast<pred_params *>(params)->fat < dynamic_cast<pred_params *>(params)->hunger_limit)
         params->alive = false;
-    dynamic_cast<pred_brain *>(core)->set_speed();
+    dynamic_cast<pred_brain *>(core)->set_speed_using_brain()
+            ;
 
+}
+
+pred::pred(place *home, Brain::Brain brain) {
+    unit::params = new pred_params;
+    unit::body_part = new body_parts;
+    unit::body_part->data = params;
+    unit::core = new pred_brain;
+    unit::core->data = params;
+    unit::params->myplace = home;
+    dynamic_cast<pred_brain*>(this->core)->mind = brain;
 }

@@ -8,11 +8,20 @@
 
 #include "../brain/brain.h"
 #include "../sell/sell_brain.h"
+#include "../../Neural_net_attempt_two/Input_Layer/Input_layer.h"
+#include "../../Neural_net_attempt_two/Dense_Layer/Dense_Layer.h"
+#include "../../Neural_net_attempt_two/Brain/Brain.h"
+
 
 class pred_brain : public brain {
+private:
+    Brain::Input_layer* init_mind();
+    std::map<int ,std::tuple<int, int>> interpret;
+    Eigen::VectorXd observation();
 public:
+    Brain::Brain mind;
     pred_brain();
-
+    void set_speed_using_brain();
     void set_speed();
 };
 

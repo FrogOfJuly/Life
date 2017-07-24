@@ -5,7 +5,7 @@
 		<Option title="Life_broken"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\local\;CMake Files\..\..\..\..\usr\local\share\;CMake Files\..\..\..\..\usr\local\share\eigen3\;CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\;CMake Files\cmake_modules\;CMake Files\Neural_net_attempt_two\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug"/>
@@ -44,6 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/include/eigen3"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.1.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -66,6 +67,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/usr/local/include/eigen3"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.1.0/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
@@ -81,7 +83,88 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="Neural_net_attempt_two_">
+				<Option output="/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/libNeural_net_attempt_two_.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gsl/2.4/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 Neural_net_attempt_two_"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Neural_net_attempt_two_/fast">
+				<Option output="/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/libNeural_net_attempt_two_.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include/eigen3"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/local/Cellar/gsl/2.4/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../lib/clang/8.1.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 Neural_net_attempt_two_/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/Kirill/ClionProjects/Life_broken/cmake-build-debug/Neural_net_attempt_two/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Brain/Brain.cpp">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Brain/Brain.h">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.cpp">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.h">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Input_Layer/Input_layer.cpp">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Input_Layer/Input_layer.h">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.cpp">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.h">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Tests/all_tests.cpp">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Tests/tests.cpp">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Tests/tests.h">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
 		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Source_files/Life.cpp">
 			<Option target="Life_broken"/>
 		</Unit>
@@ -160,8 +243,23 @@
 		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/../../../../usr/local/share/eigen3/cmake/Eigen3ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/../../../../usr/local/share/eigen3/cmake/Eigen3Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/../../../../usr/local/share/eigen3/cmake/Eigen3Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\usr\local\share\eigen3\cmake\"/>
+		</Unit>
 		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/cmake_modules/FindSFML.cmake">
 			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Neural_net_attempt_two\"/>
+		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\Neural_net_attempt_two\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
