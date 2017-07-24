@@ -2,6 +2,7 @@
 // Created by Кирилл Голубев on 01/02/2017.
 //
 
+#include <iostream>
 #include "pred.h"
 #include "../brain/brain.h"
 #include "../predator/pred_brain.h"
@@ -34,14 +35,13 @@ pred::~pred() {
 
 void pred::status_update() {
     params->age++;
-    if (params->age % 10 == 0)
-        dynamic_cast<pred_params *>(params)->fat--;
+    dynamic_cast<pred_params *>(params)->fat-=0.25;
 
     if (dynamic_cast<pred_params *>(params)->fat < dynamic_cast<pred_params *>(params)->hunger_limit)
         params->alive = false;
-    dynamic_cast<pred_brain *>(core)->set_speed_using_brain()
-            ;
 
+    dynamic_cast<pred_brain *>(core)->set_speed_using_brain();
+    //dynamic_cast<pred_brain *>(core)->set_speed();
 }
 
 pred::pred(place *home, Brain::Brain brain) {
@@ -51,5 +51,7 @@ pred::pred(place *home, Brain::Brain brain) {
     unit::core = new pred_brain;
     unit::core->data = params;
     unit::params->myplace = home;
-    dynamic_cast<pred_brain*>(this->core)->mind = brain;
+    long int a = random()%2;
+    if(a == 0)
+        dynamic_cast<pred_brain*>(core)->mind.set_all_params(brain.get_all_params());
 }

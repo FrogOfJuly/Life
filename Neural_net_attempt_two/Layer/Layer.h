@@ -34,6 +34,8 @@ namespace Brain {
         friend void attaching_test();
 
         friend void passing_test();
+
+        virtual ~Layer();
     };
 
     void attaching_test();

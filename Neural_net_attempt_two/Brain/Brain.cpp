@@ -35,13 +35,13 @@ Brain::Brain::Brain(Input_layer *net, double learning_rate) {
     this->learning_rate = learning_rate;
     auto params = get_all_params();
     this->params_number = params.rows()*params.cols();
+    this->increment = Eigen::MatrixXd::Zero(params_number, 1);
 }
 
 void Brain::Brain::set_all_params(Eigen::MatrixXd Params) {
-    long int rows = this->get_all_params().rows();
-    long int cols = this->get_all_params().cols();
-    if (Params.rows() != rows || Params.cols() != cols) {
-        cerr << "wrong number of elements " << Params.rows() * Params.cols() << " instead of " << cols * rows << endl;
+    long int rows = this->params_number;
+    if (Params.rows() != rows || Params.cols() != 1) {
+        cerr << "wrong number of elements " << Params.rows() * Params.cols() << " instead of " << rows << endl;
         throw;
     } else
         this->net->set_all_params(Params);

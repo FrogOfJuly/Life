@@ -100,3 +100,8 @@ void Brain::Layer::set_all_params(Eigen::VectorXd params){
     ;
 }
 
+Brain::Layer::~Layer() {
+    if(this->next != nullptr)
+        delete this->next;
+}
+

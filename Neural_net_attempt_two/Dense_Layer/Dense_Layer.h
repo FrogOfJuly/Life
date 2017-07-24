@@ -13,6 +13,8 @@ namespace Brain {
     private:
         int unit_number;
 
+        int params_number;
+
         double (*act_func)(double);
 
         double (*grad)(double);
@@ -42,6 +44,8 @@ namespace Brain {
         friend void test_Dense_layer();
 
         friend void test_params_setter_and_getter();
+
+
     };
 
     void test_Dense_layer();

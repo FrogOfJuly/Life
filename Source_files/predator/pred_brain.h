@@ -18,7 +18,12 @@ private:
     Brain::Input_layer* init_mind();
     std::map<int ,std::tuple<int, int>> interpret;
     Eigen::VectorXd observation();
+    void brain_update();
+    void form_reward();
 public:
+    double prev_fat;
+    bool splited;
+    double reward;
     Brain::Brain mind;
     pred_brain();
     void set_speed_using_brain();

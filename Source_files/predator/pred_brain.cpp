@@ -9,6 +9,7 @@
 #include "../place/place.h"
 #include "../sell/sell.h"
 #include "pred_params.h"
+#include <iostream>
 #include <map>
 #include <tuple>
 
@@ -22,9 +23,11 @@ pred_brain::pred_brain() : mind(init_mind()) {
             {4,std::make_tuple(1,1)},
             {5,std::make_tuple(-1,-1)},
             {6,std::make_tuple(-1,1)},
-            {7,std::make_tuple(1,-1)},
-            {8,std::make_tuple(0,0)}
+            {7,std::make_tuple(1,-1)}
     };
+    this->splited = false;
+    this->reward = 0;
+    this->prev_fat = 0;
 }
 
 void pred_brain::set_speed() {
@@ -64,20 +67,32 @@ void pred_brain::set_speed() {
 }
 
 void pred_brain::set_speed_using_brain() {
+    //const clock_t update_time = clock();
+    this->brain_update();
+    //std::cout<<"brain update time: "<<float(clock() - update_time) / CLOCKS_PER_SEC<<std::endl;
+
+    //const clock_t increment_time = clock();
+    this->mind.apply_param_increment();
+    //std::cout<<"increment_time: "<<float(clock() - increment_time) / CLOCKS_PER_SEC<<std::endl;
+    //const clock_t observation_time = clock();
     auto obs = observation();
+    //std::cout<<"observation_time: "<<float(clock() - observation_time) / CLOCKS_PER_SEC<<std::endl;
+    this->prev_fat = dynamic_cast<pred_params*>(this->data)->fat;
+
+    //const clock_t process_time = clock();
     int action = mind.process(obs);
+    //std::cout<<"process_time: "<<float(clock() - process_time) / CLOCKS_PER_SEC<<std::endl;
+    //std::cout<<"-----------------------------"<<std::endl;
     std::tuple<int, int> inter = this->interpret[action];
     this->data->speed[0] = std::get<0>(inter);
     this->data->speed[1] = std::get<1>(inter);
 }
 
 Brain::Input_layer *pred_brain::init_mind() {
-    int view_range = 19*19;
+    int view_range = 3*3;
     Brain::Input_layer *net = new Brain::Input_layer(view_range);
-    Brain::SigmoidLayer *hiddn_layer1 = new Brain::SigmoidLayer(net, int(view_range / 1.5));
-    Brain::RelULayer *hidden_layer2 = new Brain::RelULayer(net, int(view_range / 3.5));
-    Brain::SigmoidLayer *hidden_layer3 = new Brain::SigmoidLayer(net, int(view_range / 5.5));
-    Brain::SigmoidLayer *hidden_layer4 = new Brain::SigmoidLayer(net, 9);
+    Brain::SigmoidLayer *hiddn_layer1 = new Brain::SigmoidLayer(net, 8);
+    Brain::SigmoidLayer *hiddn_layer2 = new Brain::SigmoidLayer(net, 8);
     return net;
 }
 
@@ -95,4 +110,23 @@ Eigen::VectorXd pred_brain::observation() {
             observation(i) = 0;
     }
     return observation;
+}
+
+void pred_brain::brain_update() {
+    this->form_reward();
+    this->mind.update_params(reward);
+    this->reward = 0;
+    this->splited = false;
+}
+
+void pred_brain::form_reward() {
+    if(splited)
+        reward+=1;
+    if(prev_fat < dynamic_cast<pred_params*>(this->data)->fat)
+        reward+=1;
+    else
+        reward+=-1;
+
+    reward+=-0.2;
+
 }

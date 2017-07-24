@@ -39,7 +39,9 @@ void place::update() {
             return;
         }
         if (dynamic_cast<pred *>(guest) != nullptr) {
+            //const clock_t begin_spawning_time = clock();
             dynamic_cast<pred *>(guest)->status_update();
+            //std::cout<<"one speedsetting time: "<<float(clock() - begin_spawning_time) / CLOCKS_PER_SEC<<std::endl;
             return;
         }
     }

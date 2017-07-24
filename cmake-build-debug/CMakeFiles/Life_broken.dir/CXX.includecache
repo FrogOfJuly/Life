@@ -47,6 +47,8 @@ predator/pred.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.h
 sell/sell.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell.h
+predator/pred_params.h
+/Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred_params.h
 cmath
 -
 
@@ -141,6 +143,8 @@ iostream
 /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Brain/Brain.h
 
 /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.cpp
+iostream
+-
 pred.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.h
 ../brain/brain.h
@@ -173,6 +177,8 @@ pred_brain.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell.h
 pred_params.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred_params.h
+iostream
+-
 map
 -
 tuple

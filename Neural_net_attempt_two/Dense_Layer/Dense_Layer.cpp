@@ -41,6 +41,7 @@ template<double (*activation_function)(double), double (*derivative)(double)>
 void Brain::Dense_Layer<activation_function, derivative>::init() {
     this->W = Eigen::MatrixXd::Random(this->get_unit_number(), this->prev->get_unit_number());
     this->b = Eigen::MatrixXd::Random(this->get_unit_number(), 1);
+    this->params_number = this->get_Params().rows()*this->get_Params().cols();
 }
 
 template<double (*activation_function)(double), double (*derivative)(double)>
@@ -61,8 +62,8 @@ Eigen::VectorXd Brain::Dense_Layer<activation_function, derivative>::get_Params(
 template<double (*activation_function)(double), double (*derivative)(double)>
 void Brain::Dense_Layer<activation_function, derivative>::set_Params(Eigen::MatrixXd Params) {
     if (Params.rows() != (this->prev->get_unit_number() + 1) * this->unit_number)
-        cerr << "wrong shape should be " << (this->prev->get_unit_number() + 1) * this->unit_number <<
-             " instead of " << Params.rows() << endl;
+        cerr << " wrong number of params " <<Params.rows()*Params.cols() <<
+             " instead of " << this->params_number<< endl;
     for (int i = 0; i < this->unit_number * this->prev->get_unit_number(); i++)
         this->W(i) = Params(i);
     for (int i = this->unit_number * this->prev->get_unit_number();

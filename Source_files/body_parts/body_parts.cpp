@@ -47,7 +47,7 @@ bool body_parts::eat(place *victims_place) {
     if (dynamic_cast<sell *>(destination->guest) == nullptr)
         return false;
     destination->kill_unit();
-    dynamic_cast<pred_params *>(data)->fat++;
+    dynamic_cast<pred_params *>(data)->fat+=1.5;
     destination->guest = data->myplace->around[4]->guest;
     data->myplace->guest = nullptr;
     data->myplace = destination;
@@ -76,6 +76,8 @@ bool body_parts::split() {
     data->myplace->around[split_options[i]]->clone_pred(dynamic_cast<pred_brain*>(this->data->myplace->guest->core)->mind);
     delete[] split_options;
     dynamic_cast<pred_params *>(data)->fat += -dynamic_cast<pred_params *>(data)->bearth_cost;
+    dynamic_cast<pred_brain*>(this->data->myplace->guest->core)->splited = true;
+    return true;
 }
 
 int sign(int x) {

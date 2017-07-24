@@ -15,8 +15,8 @@ int _signum(float a) {
 }
 
 pred_params::pred_params() {
-    fat = 5;
-    view_range = 19;
+    fat = 10;
+    view_range = 3;
 }
 
 pred_params::~pred_params() {

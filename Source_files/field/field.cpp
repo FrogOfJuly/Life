@@ -89,12 +89,29 @@ void field::marking(int start, int finnish) {
 }
 
 void field::update(int start, int finnish) {
+    const clock_t begin_time = clock();
+    //const clock_t begin_spawning_time = clock();
     spawning(start, finnish);
-    thinking(start, finnish);
+    //std::cout<<"total spawning time: "<<float(clock() - begin_spawning_time) / CLOCKS_PER_SEC<<std::endl;
 
+    //const clock_t begin_thinking_time = clock();
+    thinking(start, finnish);
+    //std::cout<<"total thinking time: "<<float(clock() - begin_thinking_time) / CLOCKS_PER_SEC<<std::endl;
+
+    //const clock_t begin_moving_time = clock();
     moving(start, finnish);
+    //std::cout<<"total moving time: "<<float(clock() - begin_moving_time) / CLOCKS_PER_SEC<<std::endl;
+
+    //const clock_t begin_spliting_time = clock();
     spliting(start, finnish);
+    //std::cout<<"total splitting time: "<<float(clock() - begin_spliting_time) / CLOCKS_PER_SEC<<std::endl;
+
+    //const clock_t begin_marking_time = clock();
     marking(start, finnish);
+    //std::cout<<"total moving time: "<<float(clock() - begin_marking_time) / CLOCKS_PER_SEC<<std::endl;
+
+    //std::cout<<"---------------------"<<std::endl;
+    std::cout<<"total time: "<<float(clock() - begin_time) / CLOCKS_PER_SEC<<std::endl<<std::endl<<std::endl;
     time++;
 }
 
@@ -108,6 +125,7 @@ void field::spawning(int start, int finnish) {
     for (int i = start; i < finnish; i++) {
         lone[i].cleaning();
     }
+
     for (int i = start; i < finnish; i++) {
         lone[i].gowing();
     }

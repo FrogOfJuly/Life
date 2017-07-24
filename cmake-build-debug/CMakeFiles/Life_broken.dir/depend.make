@@ -10,6 +10,7 @@ CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/brain/brain.
 CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/field/field.h
 CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/place/place.h
 CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/predator/pred.h
+CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/predator/pred_params.h
 CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/sell/sell.h
 CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/unit/unit.h
 CMakeFiles/Life_broken.dir/Source_files/Life.cpp.o: ../Source_files/unit/unit_params.h

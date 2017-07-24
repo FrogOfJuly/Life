@@ -8,20 +8,23 @@
 #include "brain/brain.h"
 #include "predator/pred.h"
 #include "sell/sell.h"
+#include "predator/pred_params.h"
 #include <cmath>
+
 using namespace std;
+
 int Draw_Life(sf::RenderWindow &window, field *A, int start, int finnish);
 
 int main() {
-    int width = 300, height = 300, w_h = 650, w_w = 650;
+    int width = 100, height = 100, w_h = 650, w_w = 650;
     field A(height, width);
     sf::RenderWindow event_window(sf::VideoMode((unsigned int) w_w, (unsigned int) w_h), "Number three");
-    double n = 0.1, m = 0.002;
+    double n = 0.2, m = 0.002;
     srand(time(NULL));
     cout << A.fill(n, m) << endl;
-    cout << "esc  - exit"<<endl;
-    cout << "reds - sells wich are just spawning and splitting"<<endl;
-    cout << "greens - sells wich hunts reds and splitiing"<<endl;
+    cout << "esc  - exit" << endl;
+    cout << "reds - sells wich are just spawning and splitting" << endl;
+    cout << "greens - sells wich hunts reds and splitiing" << endl;
     while (event_window.isOpen()) {
         sf::Event event;
         while (event_window.pollEvent(event)) {
@@ -33,9 +36,9 @@ int main() {
         const clock_t begin_time = clock();
         event_window.clear(sf::Color(0, 0, 0));
         Draw_Life(event_window, &A, 0, A.H * A.W);
-        A.update(0, A.H*A.W);
+        A.update(0, A.H * A.W);
         event_window.display();
-        //std::cout << "era time = "<< float( clock () - begin_time ) /  CLOCKS_PER_SEC<< std::endl;
+        //std::cout << "era time = " << float(clock() - begin_time) / CLOCKS_PER_SEC << std::endl;
     }
     return 0;
 }
@@ -57,9 +60,10 @@ int Draw_Life(sf::RenderWindow &window, field *A, int start, int finnish) {
                 c.setSize(sf::Vector2f(2, -2));
                 window.draw(c);
             } else if (dynamic_cast<pred *>((*A)[i].guest) != nullptr) {
-                color.b = (sf::Uint8) (10 * (int) log(1 + (A->lone[i].guest->params->age)));
+                color.b = (sf::Uint8) (10 * (int) log(1 + (dynamic_cast<pred_params *>(A->lone[i].guest->params)->fat)));
 
-                color.g = (sf::Uint8) ((int) ((255 * 4) / log(pow(2.71, 4) + (A->lone[i].guest->params->age))));
+                color.g = (sf::Uint8) ((int) ((255 * 2) / log(pow(2.71, 2) +
+                                                              dynamic_cast<pred_params *>(A->lone[i].guest->params)->fat)));
 
                 c.setFillColor(color);
                 c.setPosition(2 * (i % A->W), (2 * (int) ((float) i / A->W)));

@@ -13,8 +13,8 @@ class pred_params : public unit_params {
 public:
     double fat;
     double hunger_limit = 0;
-    double bearth_limit = 10;
-    double bearth_cost = 5;
+    double bearth_limit = 11;
+    double bearth_cost = 6;
 
     pred_params();
 
