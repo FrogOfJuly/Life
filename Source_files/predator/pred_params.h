@@ -13,8 +13,9 @@ class pred_params : public unit_params {
 public:
     double fat;
     double hunger_limit = 0;
-    double bearth_limit = 11;
-    double bearth_cost = 6;
+    double bearth_limit = 0;
+    double bearth_cost = 10;
+    bool want_to_split;
 
     pred_params();
 

@@ -10,6 +10,7 @@
 #include "../brain/brain.h"
 #include "../body_parts/body_parts.h"
 #include "../predator/pred.h"
+#include "../predator/pred_params.h"
 #include <algorithm>
 #include <iostream>
 
@@ -69,7 +70,8 @@ void field::spliting(int start, int finnish) {
             }
     std::random_shuffle(list, list + amount);
     for (int i = 0; i < amount; i++) {
-        dynamic_cast<pred *>(lone[list[i]].guest)->body_part->split();
+        if(dynamic_cast<pred_params*>(lone[list[i]].guest->params)->want_to_split)
+            dynamic_cast<pred *>(lone[list[i]].guest)->body_part->split();
     }
     delete[] list;
 }

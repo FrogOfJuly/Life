@@ -19,13 +19,13 @@ namespace Brain {
         Eigen::VectorXd get_param_increment();
 
     public:
-        void apply_param_increment(double alpha = 0.01);
+        void apply_param_increment(double alpha = 0.001);
 
         Eigen::MatrixXd get_all_params();
 
         void set_all_params(Eigen::MatrixXd);
 
-        Brain(Input_layer *net, double learning_rate = 0.01);
+        Brain(Input_layer *net, double learning_rate = 0.001);
 
         void update_params(double reward);
 

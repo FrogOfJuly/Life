@@ -16,14 +16,15 @@
 
 pred_brain::pred_brain() : mind(init_mind()) {
     this->interpret = {
-            {0,std::make_tuple(0,1)},
-            {1,std::make_tuple(1,0)},
-            {2,std::make_tuple(-1,0)},
-            {3,std::make_tuple(0,-1)},
-            {4,std::make_tuple(1,1)},
-            {5,std::make_tuple(-1,-1)},
-            {6,std::make_tuple(-1,1)},
-            {7,std::make_tuple(1,-1)}
+            {0, std::make_tuple(0, 1)},
+            {1, std::make_tuple(1, 0)},
+            {2, std::make_tuple(-1, 0)},
+            {3, std::make_tuple(0, -1)},
+            {4, std::make_tuple(1, 1)},
+            {5, std::make_tuple(-1, -1)},
+            {6, std::make_tuple(-1, 1)},
+            {7, std::make_tuple(1, -1)},
+            {8, std::make_tuple(2, 0)}
     };
     this->splited = false;
     this->reward = 0;
@@ -77,28 +78,34 @@ void pred_brain::set_speed_using_brain() {
     //const clock_t observation_time = clock();
     auto obs = observation();
     //std::cout<<"observation_time: "<<float(clock() - observation_time) / CLOCKS_PER_SEC<<std::endl;
-    this->prev_fat = dynamic_cast<pred_params*>(this->data)->fat;
+    this->prev_fat = dynamic_cast<pred_params *>(this->data)->fat;
 
     //const clock_t process_time = clock();
     int action = mind.process(obs);
     //std::cout<<"process_time: "<<float(clock() - process_time) / CLOCKS_PER_SEC<<std::endl;
     //std::cout<<"-----------------------------"<<std::endl;
     std::tuple<int, int> inter = this->interpret[action];
-    this->data->speed[0] = std::get<0>(inter);
-    this->data->speed[1] = std::get<1>(inter);
+    if (std::get<0>(inter) != 2) {
+        this->data->speed[0] = std::get<0>(inter);
+        this->data->speed[1] = std::get<1>(inter);
+    }
+    else {
+        this->try_to_split();
+    }
+
 }
 
 Brain::Input_layer *pred_brain::init_mind() {
-    int view_range = 3*3;
-    Brain::Input_layer *net = new Brain::Input_layer(view_range);
-    Brain::SigmoidLayer *hiddn_layer1 = new Brain::SigmoidLayer(net, 8);
-    Brain::SigmoidLayer *hiddn_layer2 = new Brain::SigmoidLayer(net, 8);
+    int view_range = 5*5;
+    Brain::Input_layer *net = new Brain::Input_layer(view_range + 1);
+    Brain::SigmoidLayer *hiddn_layer1 = new Brain::SigmoidReccurentLayer(net, view_range);
+    Brain::SigmoidLayer *hiddn_layer2 = new Brain::SigmoidLayer(net, 9);
     return net;
 }
 
 Eigen::VectorXd pred_brain::observation() {
     const int N = this->data->view_range * this->data->view_range;
-    Eigen::VectorXd observation(N);
+    Eigen::VectorXd observation(N + 1);
     pred_params *pointer = dynamic_cast<pred_params *>(this->data);
     for (int i = 0; i < N; i++) {
         if (pointer->_view(i)->guest != nullptr)
@@ -109,6 +116,7 @@ Eigen::VectorXd pred_brain::observation() {
         else
             observation(i) = 0;
     }
+    observation(N) = dynamic_cast<pred_params*>(this->data)->fat;
     return observation;
 }
 
@@ -117,16 +125,20 @@ void pred_brain::brain_update() {
     this->mind.update_params(reward);
     this->reward = 0;
     this->splited = false;
+    dynamic_cast<pred_params*>(this->data)->want_to_split = false;
 }
 
 void pred_brain::form_reward() {
-    if(splited)
-        reward+=1;
-    if(prev_fat < dynamic_cast<pred_params*>(this->data)->fat)
-        reward+=1;
-    else
-        reward+=-1;
+    if (splited)
+        reward += 1;
+    if (prev_fat < dynamic_cast<pred_params *>(this->data)->fat)
+        reward += 1;
+    else if(prev_fat > dynamic_cast<pred_params *>(this->data)->fat)
+        reward += -1;
+    reward += -0.2;
 
-    reward+=-0.2;
+}
 
+void pred_brain::try_to_split() {
+    dynamic_cast<pred_params*>(this->data)->want_to_split = true;
 }

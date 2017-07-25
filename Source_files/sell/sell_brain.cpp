@@ -10,13 +10,17 @@
 #include "sell_params.h"
 #include "../unit/unit.h"
 #include "sell.h"
+#include "../predator/pred.h"
 
 void sell_brain::set_alert() {
     int k = 0;
     for (int x = -1; x < 2; x++)
-        for (int y = -1; y < 2; y++)
+        for (int y = -1; y < 2; y++) {
             if (dynamic_cast<sell *>(data->myplace->around[(x + 1) + (y + 1) * 3]->guest) != nullptr)
                 k++;
+            if (dynamic_cast<pred *>(data->myplace->around[(x + 1) + (y + 1) * 3]->guest) != nullptr)
+                dynamic_cast<sell_params *>(data)->alert = true;
+        }
     dynamic_cast<sell_params *>(data)->alert = !(k == 3 || k == 4);
 }
 

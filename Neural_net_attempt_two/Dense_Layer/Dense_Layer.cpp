@@ -176,3 +176,8 @@ void Brain::Dense_Layer<activation_function, dirivative>::set_all_params(Eigen::
     if(this->next != nullptr)
         this->next->set_all_params(unused_params);
 }
+
+template<double(*activation_function)(double), double(*dirivative)(double)>
+Brain::Dense_Layer<activation_function, dirivative>::Dense_Layer() {
+    ;
+}

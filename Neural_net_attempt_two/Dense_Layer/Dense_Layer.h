@@ -10,10 +10,10 @@
 namespace Brain {
     template<double (*activation_function)(double), double (*derivative)(double)>
     class Dense_Layer : public Layer {
-    private:
+    protected:
         int unit_number;
 
-        int params_number;
+        long int params_number;
 
         double (*act_func)(double);
 
@@ -26,18 +26,20 @@ namespace Brain {
 
         Eigen::VectorXd activation(Eigen::VectorXd input);
 
-        Eigen::VectorXd transform(Eigen::VectorXd);
+        virtual Eigen::VectorXd transform(Eigen::VectorXd);
 
     public:
         int get_unit_number();
 
         Dense_Layer(Layer *net, int unit_number);
 
-        Eigen::VectorXd get_Params();
+        virtual Eigen::VectorXd get_Params();
 
         Eigen::VectorXd get_all_params();
 
-        void set_Params(Eigen::MatrixXd);
+        virtual void set_Params(Eigen::MatrixXd);
+
+        Dense_Layer();
 
         void set_all_params(Eigen::VectorXd);
 

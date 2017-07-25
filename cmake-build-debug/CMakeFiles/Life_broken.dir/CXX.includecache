@@ -26,6 +26,12 @@ Eigen/Eigen
 Eigen/Eigen
 /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Eigen/Eigen
 
+/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h
+iostream
+-
+../Dense_Layer/Dense_Layer.h
+/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.h
+
 /Users/Kirill/ClionProjects/Life_broken/Source_files/Life.cpp
 iostream
 -
@@ -111,6 +117,8 @@ cstdlib
 /Users/Kirill/ClionProjects/Life_broken/Source_files/body_parts/body_parts.h
 ../predator/pred.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.h
+../predator/pred_params.h
+/Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred_params.h
 algorithm
 -
 iostream
@@ -191,8 +199,8 @@ tuple
 /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell_brain.h
 ../../Neural_net_attempt_two/Input_Layer/Input_layer.h
 /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Input_Layer/Input_layer.h
-../../Neural_net_attempt_two/Dense_Layer/Dense_Layer.h
-/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.h
+../../Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h
+/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h
 ../../Neural_net_attempt_two/Brain/Brain.h
 /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Brain/Brain.h
 
@@ -245,6 +253,8 @@ sell_params.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/unit/unit.h
 sell.h
 /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell.h
+../predator/pred.h
+/Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.h
 
 /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell_brain.h
 ../brain/brain.h

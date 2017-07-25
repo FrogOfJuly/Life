@@ -35,7 +35,7 @@ pred::~pred() {
 
 void pred::status_update() {
     params->age++;
-    dynamic_cast<pred_params *>(params)->fat-=0.25;
+    dynamic_cast<pred_params *>(params)->fat-=0.2;
 
     if (dynamic_cast<pred_params *>(params)->fat < dynamic_cast<pred_params *>(params)->hunger_limit)
         params->alive = false;

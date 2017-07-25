@@ -19,7 +19,6 @@ public:
     int view_range = 13;
 
     unit_params();
-
     virtual ~unit_params();
 };
 

@@ -389,6 +389,7 @@ CMakeFiles/Life_broken.dir/Source_files/body_parts/body_parts.cpp.o
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Input_Layer/Input_layer.h
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.h
+ /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/body_parts/body_parts.cpp
  /Users/Kirill/ClionProjects/Life_broken/Source_files/body_parts/body_parts.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/brain/brain.h
@@ -986,6 +987,7 @@ CMakeFiles/Life_broken.dir/Source_files/field/field.cpp.o
  /Users/Kirill/ClionProjects/Life_broken/Source_files/field/field.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/place/place.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.h
+ /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred_params.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/unit/unit.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/unit/unit_params.h
@@ -1571,6 +1573,7 @@ CMakeFiles/Life_broken.dir/Source_files/predator/pred.cpp.o
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Input_Layer/Input_layer.h
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.h
+ /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/body_parts/body_parts.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/brain/brain.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.cpp
@@ -1867,6 +1870,7 @@ CMakeFiles/Life_broken.dir/Source_files/predator/pred_brain.cpp.o
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Dense_Layer/Dense_Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Input_Layer/Input_layer.h
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.h
+ /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/brain/brain.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/place/place.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred_brain.cpp
@@ -2178,6 +2182,7 @@ CMakeFiles/Life_broken.dir/Source_files/sell/sell_brain.cpp.o
  /Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/brain/brain.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/place/place.h
+ /Users/Kirill/ClionProjects/Life_broken/Source_files/predator/pred.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell.h
  /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell_brain.cpp
  /Users/Kirill/ClionProjects/Life_broken/Source_files/sell/sell_brain.h

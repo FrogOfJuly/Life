@@ -9,7 +9,7 @@
 #include "../brain/brain.h"
 #include "../sell/sell_brain.h"
 #include "../../Neural_net_attempt_two/Input_Layer/Input_layer.h"
-#include "../../Neural_net_attempt_two/Dense_Layer/Dense_Layer.h"
+#include "../../Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h"
 #include "../../Neural_net_attempt_two/Brain/Brain.h"
 
 
@@ -26,6 +26,7 @@ public:
     double reward;
     Brain::Brain mind;
     pred_brain();
+    void try_to_split();
     void set_speed_using_brain();
     void set_speed();
 };

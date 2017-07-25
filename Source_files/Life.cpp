@@ -19,8 +19,8 @@ int main() {
     int width = 100, height = 100, w_h = 650, w_w = 650;
     field A(height, width);
     sf::RenderWindow event_window(sf::VideoMode((unsigned int) w_w, (unsigned int) w_h), "Number three");
-    double n = 0.2, m = 0.002;
-    srand(time(NULL));
+    double n = 0.2, m = 0.05;
+    srand((unsigned int)(time(NULL)));
     cout << A.fill(n, m) << endl;
     cout << "esc  - exit" << endl;
     cout << "reds - sells wich are just spawning and splitting" << endl;

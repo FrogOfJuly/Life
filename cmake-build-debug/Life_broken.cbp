@@ -156,6 +156,9 @@
 		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Layer/Layer.h">
 			<Option target="Neural_net_attempt_two_"/>
 		</Unit>
+		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Reccurent_Layer/Reccurent_Layer.h">
+			<Option target="Neural_net_attempt_two_"/>
+		</Unit>
 		<Unit filename="/Users/Kirill/ClionProjects/Life_broken/Neural_net_attempt_two/Tests/all_tests.cpp">
 			<Option target="Neural_net_attempt_two_"/>
 		</Unit>

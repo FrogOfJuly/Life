@@ -47,7 +47,7 @@ bool body_parts::eat(place *victims_place) {
     if (dynamic_cast<sell *>(destination->guest) == nullptr)
         return false;
     destination->kill_unit();
-    dynamic_cast<pred_params *>(data)->fat+=1.5;
+    dynamic_cast<pred_params *>(data)->fat+=1;
     destination->guest = data->myplace->around[4]->guest;
     data->myplace->guest = nullptr;
     data->myplace = destination;

@@ -14,7 +14,8 @@ set(SOURCE_FILES
         Tests/tests.cpp
         Tests/tests.h
         Brain/Brain.cpp
-        Brain/Brain.h)
+        Brain/Brain.h
+        Reccurent_Layer/Reccurent_Layer.h)
 
 find_package(GSL REQUIRED)
 include_directories(${GSL_INCLUDE_DIR})
